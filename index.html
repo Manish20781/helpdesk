@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpDesk Mini - Tickets</title>
+  
+  <style>
+    /* General Styling */
+    html {
+      height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%; /* Make body at least full viewport height */
+      background-color: #f4f7f6;
+      color: #333;
+    }
+
+    /* This makes the container grow to fill available space, pushing footer down */
+    .container {
+      flex: 1; 
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      color: #333;
+      padding: 10px 20px;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .navbar h2 {
+      margin: 0;
+    }
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Table Styling */
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .ticket-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden; /* Ensures the border-radius is applied to table corners */
+    }
+    .ticket-table th, .ticket-table td {
+      border-bottom: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    .ticket-table th {
+      background-color: #f8f9fa;
+    }
+    .ticket-table tr:last-child td {
+        border-bottom: none; /* Remove border from the last row */
+    }
+
+    .status {
+      padding: 5px 10px;
+      border-radius: 15px;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .status.open {
+      background-color: #28a745;
+    }
+    .status.closed {
+      background-color: #dc3545;
+    }
+
+    /* Pagination Controls */
+    .pagination {
+      margin-top: 25px;
+      display: flex;
+      justify-content: flex-end; /* Align to the right corner */
+      align-items: center;
+    }
+    .pagination a {
+      color: #007bff;
+      padding: 8px 16px;
+      text-decoration: none;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+      border-radius: 4px;
+      transition: background-color .3s;
+    }
+    .pagination a.active {
+      background-color: #007bff;
+      color: white;
+      border: 1px solid #007bff;
+    }
+    .pagination a:hover:not(.active) {
+      background-color: #f0f0f0;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+    }
+
+    /* Animation */
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <h2>🛠 HelpDesk Mini</h2>
+    <a href="new-ticket.html" class="btn">+ New Ticket</a>
+  </nav>
+
+  <div class="container fade-in">
+    <h1>All Tickets</h1>
+    <table class="ticket-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Description (Preview)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Login Issue</td>
+          <td><span class="status open">Open</span></td>
+          <td>Unable to login with my credentials...</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Feature Request</td>
+          <td><span class="status closed">Closed</span></td>
+          <td>Please add dark mode option...</td>
+        </tr>
+        </tbody>
+    </table>
+
+   
+
+  </div>
+
+  <footer>© 2025 HelpDesk Mini | Designed by Manish</footer>
+
+</body>
+</html>

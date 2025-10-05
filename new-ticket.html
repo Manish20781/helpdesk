@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Ticket</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+        }
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+        .navbar h2 {
+            margin: 0;
+        }
+        .navbar .btn-secondary {
+            margin-left: auto;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            width: 100%;
+        }
+        .ticket-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+        .form-group {
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        #title, #description {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        #title {
+            height: 48px;
+            font-size: 1.1rem;
+        }
+        #description {
+            font-size: 1.1rem;
+        }
+        footer {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h2>🛠 HelpDesk Mini</h2>
+        <a href="index.html" class="btn-secondary">← Back</a>
+    </nav>
+
+    <div class="container fade-in">
+        <h1>Create a New Ticket</h1>
+        <form class="ticket-form">
+            <div class="form-group">
+                <label for="title">Ticket Title</label>
+                <input type="text" id="title" placeholder="Enter ticket title" required />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="6" placeholder="Describe the issue..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Ticket</button>
+        </form>
+    </div>
+
+    <footer>© 2025 HelpDesk Mini | Designed by Manish</footer>
+    <script src="script.js"></script>
+</body>
+</html>
